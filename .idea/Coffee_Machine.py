@@ -5,7 +5,9 @@ cups_available = 9
 money_available = 550
 
 def buy_espresso():
+
     global water_available, milk_available, beans_available, cups_available, money_available
+
     if water_available <= 250:
         print("Sorry, not enough water!")
         if beans_available <= 16:
@@ -19,7 +21,9 @@ def buy_espresso():
         print("I have enough resources, making you a coffee!")
 
 def buy_latte():
+
     global water_available, milk_available, beans_available, cups_available, money_available
+
     if water_available <= 350:
         print("Sorry, not enough water!")
         if milk_available <= 75:
@@ -35,7 +39,9 @@ def buy_latte():
         print("I have enough resources, making you a coffee!")
 
 def buy_cappuccino():
+
     global water_available, milk_available, beans_available, cups_available, money_available
+
     if water_available <= 200:
         print("Sorry, not enough water!")
         if milk_available <= 100:
@@ -51,8 +57,11 @@ def buy_cappuccino():
         print("I have enough resources, making you a coffee!")
 
 def buy():
+
     global cups_available
+
     drink = input("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:\n")
+
     if drink == "back":
         return
     elif cups_available >= 1:
@@ -64,7 +73,9 @@ def buy():
             buy_cappuccino()
 
 def fill():
+
     global water_available, milk_available, beans_available, cups_available
+
     print("Write how many ml of water do you want to add:")
     add_water = int(input())
     print("Write how many ml of milk do you want to add:")
@@ -80,11 +91,15 @@ def fill():
     cups_available = cups_available + add_cups
 
 def take():
+
     global money_available
+
     print("I gave you $" + str(money_available))
+
     money_available = money_available - money_available
 
 def remaining():
+
     print("The coffee machine has:")
     print(str(water_available) + " of water")
     print(str(milk_available) + " of milk")
@@ -93,7 +108,9 @@ def remaining():
     print(str(money_available) + " of money")
 
 def main_menu():
+
     pointer = True
+
     while pointer == True:
         print("Write action (buy, fill, take, remaining, exit):")
         action = input()
